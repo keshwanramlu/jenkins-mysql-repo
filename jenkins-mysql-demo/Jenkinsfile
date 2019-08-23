@@ -18,6 +18,9 @@ pipeline{
 	steps {
 	 dir("${env.WORKSPACE}/jenkins-mysql-demo") {
 		sh 'pwd'
+		 docker {
+			 image 'mysql/mysql-server:latest'
+		 }
 		sh 'mvn test'
 	}
 	}
